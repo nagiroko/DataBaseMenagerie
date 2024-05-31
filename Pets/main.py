@@ -135,16 +135,7 @@ def birth_month():
     # Display each row
     for row in rows:
         print(f"{' | '.join(map(str, row))}")
-def output():
-    output_file = "new_database_dump.sql"
-    subprocess.run([
-        mysqldump_path,
-        "-h", host,
-        "-u", user,
-        f"--password={password}",
-        ,
-        "-r", output_file
-    ])
+
 
 if __name__ == '__main__':
     create_database()
@@ -154,7 +145,6 @@ if __name__ == '__main__':
     birth_name()
     count()
     birth_month()
-    output
     # Close the cursor and connection
     c.close()
     conn.close()
